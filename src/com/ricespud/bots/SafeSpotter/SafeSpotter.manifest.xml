@@ -1,0 +1,24 @@
+<manifest>
+    <main-class>com.ricespud.bots.SafeSpotter.SafeSpotter</main-class>
+
+    <name>Rice SafeSpotter</name>
+    <tag-line>Stay safe or whatever</tag-line><!--Max of 50 chars-->
+    <description>Stands in a spot and sometimes clicks a cannon and eats </description><!--Max of 110 chars-->
+    <version>0.0.1</version>
+    <compatibility>
+        <game>OSRS</game>
+    </compatibility>
+    <categories>
+        <category>COMBAT</category>
+    </categories>
+    <!--Required to publish on the bot store-->
+    <internal-id>AiO</internal-id>
+    <!--The rest are optional-->
+    <open-source>false</open-source>
+    <hidden>false</hidden> <!--If you need to hide it from the bot store for maintenance-->
+    <access>public</access>
+    <tags>
+    </tags>
+    <resources>
+    </resources>
+</manifest>

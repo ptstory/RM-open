@@ -1,0 +1,41 @@
+{
+  "name": "atBank",
+  "notes": "Checks if we are at bank",
+  "leaf": false,
+  "success": {
+    "name": "inventoryContainsVials",
+    "notes": "Checks if inventory contains 14 vials of water",
+    "leaf": false,
+    "isSuccess": true,
+    "success": {
+      "name": "inventoryContainsGuam",
+      "notes": "Checks if inventory contains 14 Guam leafs",
+      "leaf": false,
+      "isSuccess": true,
+      "success": {
+        "name": "makePotion",
+        "notes": "Uses \"Guam leaf\" on \"Vial of water\" to make potion",
+        "leaf": true,
+        "isSuccess": true
+      },
+      "failure": {
+        "name": "withdrawGuam",
+        "notes": "Opens bank and withdraws 14 \"Guam leaf\"",
+        "leaf": true,
+        "isSuccess": false
+      }
+    },
+    "failure": {
+      "name": "withdrawVials",
+      "notes": "Opens bank and withdraws 14 \"Vials of water\"",
+      "leaf": true,
+      "isSuccess": false
+    }
+  },
+  "failure": {
+    "name": "travelToBank",
+    "notes": "Travels to bank",
+    "leaf": true,
+    "isSuccess": false
+  }
+}

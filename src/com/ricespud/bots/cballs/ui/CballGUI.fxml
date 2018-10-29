@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="327.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1"
+            xmlns:fx="http://javafx.com/fxml/1">
+
+   <HBox prefHeight="72.0" prefWidth="607.0">
+
+      <VBox prefHeight="100.0" prefWidth="2.0"/>
+      <VBox prefHeight="61.0" prefWidth="295.0"/>
+      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="35.0" prefWidth="229.0" text="Runtime:">
+         <font>
+            <Font size="24.0"/>
+         </font>
+      </Label>
+      <Label fx:id="runtimeLabel" alignment="BOTTOM_RIGHT" prefHeight="31.0" prefWidth="62.0" text="null">
+         <font>
+            <Font size="14.0"/>
+         </font>
+      </Label>
+   </HBox>
+   <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="57.0" prefHeight="16.0" prefWidth="100.0"
+          text="Balls made:"/>
+   <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="87.0" prefHeight="16.0" prefWidth="100.0" text="Balls p/hr"/>
+   <Label fx:id="planksMadeLabel" layoutX="142.0" layoutY="57.0" prefHeight="16.0" prefWidth="100.0" text="null"/>
+   <Label fx:id="planksPerHourLabel" layoutX="142.0" layoutY="87.0" prefHeight="16.0" prefWidth="100.0" text="null"/>
+   <Label alignment="CENTER_RIGHT" contentDisplay="TOP" layoutX="22.0" layoutY="117.0" prefHeight="16.0"
+          prefWidth="100.0" text="Profit made:"/>
+   <Label alignment="CENTER_RIGHT" layoutX="22.0" layoutY="147.0" prefHeight="16.0" prefWidth="100.0"
+          text="Profit p/hr:"/>
+   <Label fx:id="profitMadeLabel" layoutX="142.0" layoutY="117.0" prefHeight="16.0" prefWidth="100.0" text="null"/>
+   <Label fx:id="profitPerHourLabel" layoutX="142.0" layoutY="147.0" prefHeight="16.0" prefWidth="100.0" text="null"/>
+   <Button fx:id="startButton" layoutX="170.0" layoutY="233.0" mnemonicParsing="false" prefHeight="72.0"
+           prefWidth="260.0" text="Make Balls">
+      <font>
+         <Font size="24.0"/>
+      </font>
+   </Button>
+</AnchorPane>

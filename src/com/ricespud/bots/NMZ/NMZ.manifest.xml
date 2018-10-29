@@ -1,0 +1,29 @@
+<manifest>
+    <main-class>com.ricespud.bots.NMZ.NMZ</main-class>
+
+    <name>Rice NMZ</name>
+    <tag-line>Forward to Edgeville!</tag-line><!--Max of 50 chars-->
+    <description>Earn up to 168k gp/hr and 13k Smithing xp/hr! </description><!--Max of 110 chars-->
+    <version>0.0.1</version>
+    <compatibility>
+        <game>OSRS</game>
+    </compatibility>
+    <categories>
+        <category>COMBAT</category>
+    </categories>
+    <!--Required to publish on the bot store-->
+    <internal-id>AiO</internal-id>
+    <!--The rest are optional-->
+    <open-source>false</open-source>
+    <hidden>false</hidden> <!--If you need to hide it from the bot store for maintenance-->
+    <access>public</access>
+    <tags>
+        <tag>Balls</tag>
+        <tag>Cannonballs</tag>
+        <tag>AFK</tag>
+        <tag>Money</tag>
+    </tags>
+    <resources>
+        <!--<resource>src/com/ricespud/bots/cballs/ui/CballGUI.fxml</resource>-->
+    </resources>
+</manifest>
