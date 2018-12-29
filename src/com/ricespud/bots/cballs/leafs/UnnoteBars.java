@@ -20,45 +20,35 @@ import com.runemate.game.api.script.framework.tree.LeafTask;
  */
 public class UnnoteBars extends LeafTask {
 
-    private InterfaceComponent unNotedInterface;
-    private GameObject bankBooth;
-    private Player player;
-
-
     @Override
     public void execute() {
-        player = Players.getLocal();
         SpriteItem notedSteelBar = Inventory.newQuery().ids(2354).results().first();
 
-        if(Bank.isOpen()){
+        if (Bank.isOpen()) {
             Bank.close();
         }
 
-        if (notedSteelBar != null) {
-            if (notedSteelBar.isValid()) {
-                if (notedSteelBar.click()) {
-                    Execution.delayUntil(() -> Inventory.getSelectedItem() != null, 800, 1200);
-                    getLogger().debug("Noted steel bar selected.");
-                    bankBooth = GameObjects.newQuery().names("Bank booth").results().nearest();
-                    if (bankBooth != null) {
-                        if (bankBooth.isValid()) {
-                            if (bankBooth.isVisible()) {
-                                bankBooth = GameObjects.newQuery().names("Bank booth").results().nearest();
-                                if (bankBooth.click()) {
-                                    unNotedInterface = Interfaces.getAt(219, 0, 1);
-                                    Execution.delayUntil(() -> unNotedInterface != null, 3000, 6000);
-                                    unNotedInterface = Interfaces.getAt(219, 0, 1);
-                                    if (unNotedInterface != null) {
-                                        Execution.delayUntil(() -> unNotedInterface.isValid(), 1000, 2000);
-                                        if (unNotedInterface.click()) {
-                                            getLogger().debug("Successfully clicked 'Un-noted the banknotes'");
-                                            Execution.delayUntil(() -> Inventory.contains(2353), 2000, 4000);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+        if (notedSteelBar == null) {
+            return;
+        }
+
+        final InterfaceComponent unNotedInterface = Interfaces.newQuery().texts("Un-note the banknotes?").results().first();
+        if (unNotedInterface != null && unNotedInterface.isVisible()) {
+            if (ChatDialog.getTitle().equals("Un-note the banknotes?")) {
+                ChatDialog.Option yes = ChatDialog.getOption(1);
+                if (yes != null) {
+                    yes.select();
+                }
+            }
+            Execution.delayUntil(() -> Inventory.contains(2353), 1800, 2400);
+        } else {
+            final SpriteItem item = Inventory.getSelectedItem();
+            if (item == null || !item.equals(notedSteelBar)) {
+                notedSteelBar.click();
+            } else {
+                final GameObject bankBooth = GameObjects.newQuery().names("Bank booth").results().nearest();
+                if (bankBooth != null && bankBooth.click()) {
+                    Execution.delayUntil(() -> unNotedInterface != null, 3000, 6000);
                 }
             }
         }
